@@ -10,13 +10,13 @@
         <title>Registrarse</title>
     </head>
     <body>
-        <form>
+        <form method="POST">
             <table>
                 <tr>
                     <td>
-                        <input type="text" placeholder="Nombre(s)">
-                        <input type="text" placeholder="Primer apellido">
-                        <input type="text" placeholder="Segundo apellido">
+                        <input name="name" type="text" placeholder="Nombre(s)">
+                        <input name="apellido1" type="text" placeholder="Primer apellido">
+                        <input name="apellido2" type="text" placeholder="Segundo apellido">
                     </td>
                 </tr>
                 <tr>
@@ -27,13 +27,19 @@
                 <option>Cedula de extranjeria</option>
                 <option>Tarjeta de identidad</option>
                         </select>
-                        <input type="text" placeholder="Numero de documento">
+                        <input name="identificacion" type="text" placeholder="Numero de documento">
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="email" placeholder="Correo">
-                        <input type="tel" placeholder="Telefono" size="10">
+                        <input name="correo" type="email" placeholder="Correo">
+                        <input name="telefono" type="tel" placeholder="Telefono" size="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="user" type="text" placeholder="Usuario">
+                        <input name="contrasena" type="password" placeholder="Contraseña">
                     </td>
                 </tr>
                 <tr>
@@ -43,6 +49,6 @@
                 </tr>
         </table>
         </form>
-        <button><a href="index.html">Inicio</a></button>                        
+        <button><a href="index">Inicio</a></button>                        
     </body>
 </html>
