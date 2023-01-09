@@ -13,7 +13,7 @@ dotenv.config({path: __dirname+'/env/.env'}) // Env => Variables de entorno
 
 //Motor de plantillas
 app.set('view engine', 'ejs');
-app.set("views", path.join(__dirname,'..'+"Frontend\Views"));
+app.set("views", path.join(__dirname,'..'+"/Frontend/Views"));
 
 //Invocamos bcrypts.js
 const bcryptjs = require('bcryptjs');
@@ -31,7 +31,7 @@ const connection = require('./Database/db.js');
 
 //Rutas
 app.get('/', (req, res)=>{
-	res.render("index");
+	res.render('index');
 });
 
 app.listen(3080, (req, res)=>{
