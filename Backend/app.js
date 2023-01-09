@@ -1,6 +1,7 @@
 //Invocamos a express
 const express = require('express');
 const app = express();
+const path = require('path');
 
 // Seteamos urlencoded para capturar los datos del formulario
 app.use(express.urlencoded({extended: false}));
@@ -12,6 +13,7 @@ dotenv.config({path: __dirname+'/env/.env'}) // Env => Variables de entorno
 
 //Motor de plantillas
 app.set('view engine', 'ejs');
+app.set("views", path.join(__dirname,'..'+"Frontend\Views"));
 
 //Invocamos bcrypts.js
 const bcryptjs = require('bcryptjs');
@@ -29,7 +31,7 @@ const connection = require('./Database/db.js');
 
 //Rutas
 app.get('/', (req, res)=>{
-	res.send('Hola mundo');
+	res.render("index");
 });
 
 app.listen(3080, (req, res)=>{
