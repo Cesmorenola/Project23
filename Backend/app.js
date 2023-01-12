@@ -51,8 +51,7 @@ app.post("/register", async (req, res) => {
   const password = req.body.contrasena;
   let passwordHash = await bcryptjs.hash(password, 8);
   connection.query(
-    "INSERT INTO users SET ?",
-    {
+    "INSERT INTO users SET ?", {
       Nombres: name,
       Apellidos: apellidos,
       Telefono: phone,
@@ -63,9 +62,12 @@ app.post("/register", async (req, res) => {
     },
     async (error, results) => {
       if (error) {
-        console.log(error);
+        console.log("Este es el error: "+error);
       } else {
-        res.render("index");
+        req.session.loggedin = true;                
+				req.session.name = name
+				res.render('index',{login:true, name: name});
+        console.log("Usuario registrado");
       }
     }
   );
